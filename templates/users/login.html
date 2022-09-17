@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<div class="form-group col-3 p-3 bg-dark position-absolute top-50 start-50 translate-middle rounded">
+        <form class="site-form text-white" action="{% url 'users:login' %}" method="post">
+            <div class="d-grid gap-2">
+                {% csrf_token %}
+                {{ form | crispy }}
+                {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{request.GET.next}}">
+                {% endif %}
+                <input type="submit" class="bg-secondary text-light w-100 mt-2 btn btn-lg" value="Log In">
+            </div>
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% block add_style %}
+    <link rel="stylesheet" href="{% static 'styles/users/add_player.css' %}">
+{% endblock %}
+{% block content %}
+<div class="form-group mx-auto my-5 col-4 p-4 bg-dark rounded text-white">
+    <form class="form-control d-grid gap-3" action="{% url 'players:add_player' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class = "text-center">
+                <input type="submit" class="bg-secondary text-light w-50 my-1 btn btn-lg" value="Add Player">
+            </div>
+    </form>
+</div>
+{% endblock %}

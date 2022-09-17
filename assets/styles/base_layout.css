@@ -1,0 +1,54 @@
+body {
+    padding-bottom: 20px;
+    background: rgb(92,0,5);
+    background: -moz-linear-gradient(56deg, rgba(92,0,5,1) 0%, rgba(0,12,51,1) 100%);
+    background: -webkit-linear-gradient(56deg, rgba(92,0,5,1) 0%, rgba(0,12,51,1) 100%);
+    background: linear-gradient(56deg, rgba(92,0,5,1) 0%, rgba(0,12,51,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5c0005",endColorstr="#000c33",GradientType=1);
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+
+#logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+}

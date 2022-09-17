@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% block content %}
+<div class="form-group col-3 p-3 bg-dark text-white position-absolute top-50 start-50 translate-middle rounded">
+        <form class="form-control bg-white d-grid gap-2" action="{% url 'users:signup' %}" method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <input type="submit" class="form-control bg-secondary text-light w-100 my-3 btn btn-lg" value="Sign Up">
+        </form>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+body {
+    margin-bottom: 20px;
+}
+
+.players-list{
+    max-width: 1318px;
+    margin: 0 auto;
+}
+
+.photo-container {
+    margin: 5px 3.5px;
+    line-height: 0px;
+    position: relative;
+    display: inline-block;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.player-photo{
+    width: 318px;
+    height: 450px;
+}
+
+.show-player-number {
+    opacity: 0;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    text-align: center;
+}
+
+.show-player-name {
+    opacity: 0;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    text-align: center;
+}
+
+.photo-container:hover .player-photo {
+    transition: .5s ease;
+    filter: brightness(20%);
+}
+
+.photo-container:hover .show-player-number {
+    transition: .5s ease;
+    opacity: 1
+}
+
+.photo-container:hover .show-player-name {
+    transition: .5s ease;
+    opacity: 1
+}
+
+.player-number {
+    color: #b4c3ce;
+    cursor: pointer;
+    font-size: 64px;
+}
+
+.player-name {
+    color: #b4c3ce;
+    font-weight: bold;
+     cursor: pointer;
+    font-size: 29px;
+}

@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>FC Barcelona Squad</title>
+    <link rel="icon" href="{% static 'pics/tab_icon.png' %}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/base_layout.css' %}">
+    {% block add_style %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'pics/navbar-icon.png' %}"></a>
+            <a class="navbar-brand" href="{% url 'home' %}">FC Barcelona Squad</a>
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <i class="nav-link disabled text-light ms my-auto font-italic"><strong>Hello, {{ user }}!</strong></i>
+                </li>
+                {% if  user.is_staff%}
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'players:add_player' %}">Add Player</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <form class="logout-link" action="{% url 'users:logout' %}" method="post">
+                        {% csrf_token %}
+                        <a class="nav-link">
+                            <button id="logout-button" type="submit">Log Out</button>
+                        </a>
+                    </form>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users:login' %}">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users:signup' %}">Sign Up</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    </nav>
+    <main>
+        <div class="wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    <script src="{% static 'styles/bootstrap/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
