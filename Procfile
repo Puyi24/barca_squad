@@ -1,0 +1,1 @@
+web: gunicorn barca_squad.wsgi
